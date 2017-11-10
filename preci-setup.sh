@@ -57,9 +57,6 @@ export LD_LIBRARY_PATH=$HOME/llvm-3.0/lib:$LD_LIBRARY_PATH
 
 echo "export LLVM_COMPILER=clang" >> ~/.bashrc
 
-echo "export LD_LIBRARY_PATH=${CORVETTE_PATH}/logging:${LD_LIBRARY_PATH}" >> ~/.bashrc
-export LD_LIBRARY_PATH=${CORVETTE_PATH}/logging:${LD_LIBRARY_PATH}
-
 ### Installing scons
 
 cd
@@ -75,7 +72,11 @@ cd
 git clone https://github.com/corvette-berkeley/precimonious.git
 cd precimonious
 
+export CORVETTE_PATH=$HOME/precimonious
 echo "export CORVETTE_PATH=$HOME/precimonious" >> ~/.bashrc
+
+echo "export LD_LIBRARY_PATH=${CORVETTE_PATH}/logging:${LD_LIBRARY_PATH}" >> ~/.bashrc
+export LD_LIBRARY_PATH=${CORVETTE_PATH}/logging:${LD_LIBRARY_PATH}
 
 source ~/.bashrc
 
